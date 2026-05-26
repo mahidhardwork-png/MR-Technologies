@@ -19,8 +19,8 @@
                     },
                     colors: {
                         infra: { 
-                            dark: '#030712', 
-                            panel: '#091022', 
+                            dark: '#020617', 
+                            panel: '#0b1329', 
                             edge: '#1e293b', 
                             blue: '#2563eb', 
                             neon: '#60a5fa' 
@@ -33,268 +33,192 @@
     <style>
         [x-cloak] { display: none !important; }
         .grid-bg {
-            background-image: linear-gradient(to right, rgba(30, 41, 59, 0.15) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(30, 41, 59, 0.15) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(30, 41, 59, 0.12) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(30, 41, 59, 0.12) 1px, transparent 1px);
+            background-size: 45px 45px;
         }
     </style>
 </head>
-<body class="bg-infra-dark text-slate-100 antialiased selection:bg-infra-blue/30 selection:text-white grid-bg">
+<body class="bg-infra-dark text-slate-100 antialiased selection:bg-infra-blue/30 selection:text-white grid-bg" x-data="{ currentPage: 'home' }">
 
     <header class="fixed top-0 left-0 w-full z-50 bg-infra-dark/80 backdrop-blur-xl border-b border-slate-900">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3 cursor-pointer" @click="currentPage = 'home'; window.scrollTo(0,0)">
                 <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-infra-blue to-indigo-600 flex items-center justify-center font-mono font-black text-white shadow-md shadow-infra-blue/20">MR</div>
                 <div class="flex flex-col">
-                    <span class="text-sm font-black tracking-wider uppercase text-white leading-none">MR TECHNOLOGIES</span>
+                    <span class="text-sm font-black tracking-wider uppercase text-white leading-none">MR Technologies</span>
                     <span class="text-[9px] font-mono text-infra-neon tracking-widest uppercase mt-1">Sovereign Computational Layer</span>
                 </div>
             </div>
-            <nav class="hidden lg:flex items-center space-x-8 text-[11px] font-mono tracking-wider uppercase text-slate-400">
-                <a href="#vision" class="hover:text-white transition">01 // System Vision</a>
-                <a href="#pipeline" class="hover:text-white transition">02 // COL Topology</a>
-                <a href="#modules" class="hover:text-white transition">03 // Platform Modules</a>
-                <a href="#underwriting" class="hover:text-white transition text-infra-neon">04 // Capital Simulator</a>
+            
+            <nav class="hidden lg:flex items-center space-x-8 text-[11px] font-mono tracking-wider uppercase">
+                <button @click="currentPage = 'home'; window.scrollTo(0,0)" :class="currentPage === 'home' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">01 // Core Platform</button>
+                <button @click="currentPage = 'solutions'; window.scrollTo(0,0)" :class="currentPage === 'solutions' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">02 // Provider Solutions</button>
+                <button @click="currentPage = 'developers'; window.scrollTo(0,0)" :class="currentPage === 'developers' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">03 // Dev Portal</button>
+                <button @click="currentPage = 'investors'; window.scrollTo(0,0)" :class="currentPage === 'investors' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">04 // Investor Relations</button>
             </nav>
-            <a href="#underwriting" class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-white font-mono text-xs tracking-wider px-4 py-2.5 rounded transition">
-                Execute Simulation
-            </a>
+            
+            <button @click="currentPage = 'contact'; window.scrollTo(0,0)" :class="currentPage === 'contact' ? 'bg-infra-blue text-white' : 'bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-white'" class="font-mono text-xs tracking-wider px-4 py-2.5 rounded transition">
+                Request Protocol Access
+            </button>
         </div>
     </header>
 
-    <section class="relative pt-44 pb-32 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.08),transparent_50%)]"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center space-x-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-md font-mono text-[11px] text-infra-neon">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span>PRODUCTION NODES COMPILING // SERIES A ALLOCATION RETAINED</span>
+    <main x-show="currentPage === 'home'" class="pt-20">
+        <section class="relative pt-24 pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center space-x-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-md font-mono text-[11px] text-infra-neon">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span>MEDUNIVERSE SYSTEM LAYER DEPLOYED</span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight uppercase leading-[1.05]">
+                            The AI-Native Operating System Layer for <span class="text-transparent bg-clip-text bg-gradient-to-r from-infra-blue to-indigo-400">Global Healthcare</span> Infrastructure
+                        </h1>
+                        <p class="text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed">
+                            MedUniverse™ bypasses un-optimized database setups. By integrating stateful orchestration pipelines directly on top of legacy medical applications inside certified enclaves, we accelerate active systemic operational performance.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button @click="currentPage = 'solutions'" class="bg-gradient-to-r from-infra-blue to-indigo-600 font-mono text-xs font-bold tracking-wider uppercase px-6 py-4 rounded shadow-lg shadow-infra-blue/20 transition">Explore Provider Architecture</button>
+                            <button @click="currentPage = 'developers'" class="bg-slate-900/80 border border-slate-800 text-slate-300 font-mono text-xs tracking-wider uppercase px-6 py-4 rounded transition">Inspect API Specs</button>
+                        </div>
                     </div>
-                    <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight uppercase leading-[1.05]">
-                        The AI-Native Operating System Layer for <span class="text-transparent bg-clip-text bg-gradient-to-r from-infra-blue to-indigo-400">Global Healthcare</span> Infrastructure
-                    </h1>
-                    <p class="text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed">
-                        MedUniverse™ bypasses consumer health application constraints. By executing stateful multi-agent orchestrations directly on real-time HL7/FHIR v5 streaming architectures within hardware-isolated confidential enclaves, we convert passive medical archives into deterministic operational runtimes.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="#underwriting" class="bg-gradient-to-r from-infra-blue to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 font-mono text-xs font-bold tracking-wider uppercase px-6 py-4 rounded shadow-lg shadow-infra-blue/20 transition">
-                            Run Underwriting Simulator
-                        </a>
-                        <a href="#pipeline" class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-slate-300 font-mono text-xs tracking-wider uppercase px-6 py-4 rounded transition">
-                            Verify Data Schema Topology
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="lg:col-span-5 bg-infra-panel border border-slate-800/80 p-6 rounded-xl font-mono text-xs text-slate-400 shadow-2xl" x-data="{ transactions: [] }" x-init="
-                    setInterval(() => {
-                        const modules = ['CORE-OS', 'OPSCOMMAND', 'CLINICAL-FLOW', 'NEXUS'][Math.floor(Math.random() * 4)];
-                        const latency = (Math.random() * 40 + 110).toFixed(1);
-                        transactions.unshift({ id: Math.random().toString(16).substring(2,8).toUpperCase(), module: modules, latency: latency, time: new Date().toLocaleTimeString() });
-                        if(transactions.length > 5) transactions.pop();
-                    }, 1800);
-                }">
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-                        <span class="text-white font-bold text-[11px] tracking-wider uppercase">Live Stream Ingestion Audit</span>
-                        <span class="text-infra-neon text-[10px]">Kafka Node: 48-ACTIVE</span>
-                    </div>
-                    <div class="space-y-2 min-h-[190px]">
-                        <template x-for="tx in transactions" :key="tx.id">
-                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/60 border border-slate-800/40">
-                                <span class="text-slate-500 font-bold" x-text='`#${tx.id}`'></span>
-                                <span class="text-slate-300 bg-slate-800 px-1.5 py-0.5 rounded text-[10px]" x-text="tx.module"></span>
-                                <span class="text-emerald-400 font-bold" x-text='`${tx.latency}ms`'></span>
-                                <span class="text-slate-600 text-[10px]" x-text="tx.time"></span>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="vision" class="py-24 border-t border-slate-900 bg-slate-950/40">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase mb-3">01 // Institutional Imperative</h2>
-                    <p class="text-3xl font-black text-white tracking-tight uppercase mb-6">Eliminating Structural Health Debt</p>
-                    <p class="text-slate-400 mb-6 leading-relaxed">
-                        Modern global health networks are suffering from acute financial collapse. Staffing shortages have driven hospital margins down to critical levels, while clinicians spend over 2 hours on manual interface documentation for every 1 hour of patient care.
-                    </p>
-                    <p class="text-slate-400 leading-relaxed">
-                        MR Technologies bypasses conventional application middleware. We introduce **MedUniverse™**: a unified, deterministic framework deployed beneath existing systems to eliminate administrative overhead and maximize capital efficiency.
-                    </p>
-                </div>
-                <div class="bg-infra-panel border border-slate-800 p-8 rounded-xl relative shadow-xl">
-                    <span class="text-7xl font-serif text-infra-blue/20 absolute top-2 left-4">“</span>
-                    <p class="text-lg italic text-slate-300 relative z-10 font-medium mb-6 leading-relaxed">
-                        Healthcare does not have a data shortage; it has an infrastructure crisis. Legacy database networks force clinicians to operate as data-entry workers, leaving health networks compressed. MedUniverse turns passive records into active execution.
-                    </p>
-                    <div class="text-xs font-mono font-bold text-white uppercase tracking-wider">— The Founders Cohort // May 2026</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pipeline" class="py-24 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="max-w-3xl mb-16">
-                <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase mb-2">02 // Technical Specifications</h2>
-                <h3 class="text-3xl font-black text-white uppercase tracking-tight">Clinical Orchestration Layer (COL) Topology</h3>
-            </div>
-            
-            <div class="overflow-x-auto border border-slate-800 rounded-xl bg-infra-panel/50 backdrop-blur-md shadow-xl">
-                <table class="w-full text-left font-mono text-xs text-slate-300">
-                    <thead class="bg-slate-900 text-slate-400 border-b border-slate-800">
-                        <tr>
-                            <th class="p-4 uppercase tracking-wider text-[11px]">Native Ingestion Event Payload</th>
-                            <th class="p-4 uppercase tracking-wider text-[11px]">Dynamic Transformation Protocol</th>
-                            <th class="p-4 uppercase tracking-wider text-[11px]">Subsystem Resolution Endpoint</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-900">
-                        <tr class="hover:bg-slate-900/30 transition">
-                            <td class="p-4 font-bold text-white">HL7 v2.5 Message<br><span class="text-slate-500 text-[10px]">(`ADT^A08` - Patient Context Update)</span></td>
-                            <td class="p-4 text-slate-400">Continuous localized stream serialization parsing directly into decoupled FHIR v5 resource states.</td>
-                            <td class="p-4 text-infra-neon"><span class="bg-infra-blue/10 border border-infra-blue/20 px-2 py-1 rounded">Core OS</span> Session state verification.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-900/30 transition">
-                            <td class="p-4 font-bold text-white">FHIR v5 Bus Node<br><span class="text-slate-500 text-[10px]">(`Observation` / Telemetry Array)</span></td>
-                            <td class="p-4 text-slate-400">Asynchronous processing loops across distributed Apache Kafka event networks running at sub-200ms latency profiles.</td>
-                            <td class="p-4 text-infra-neon"><span class="bg-infra-blue/10 border border-infra-blue/20 px-2 py-1 rounded">OpsCommand</span> 72h ICU metrics planning.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-900/30 transition">
-                            <td class="p-4 font-bold text-white">DICOM Binary Packet<br><span class="text-slate-500 text-[10px]">(`DocumentReference` Stream)</span></td>
-                            <td class="p-4 text-slate-400">Hardware-isolated, memory-locked processing inside execution enclaves deploying TLS 1.3 encryption matrices.</td>
-                            <td class="p-4 text-infra-neon"><span class="bg-infra-blue/10 border border-infra-blue/20 px-2 py-1 rounded">Clinical Flow</span> Automated ICD-11 coding loops.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section id="modules" class="py-24 border-t border-slate-900 bg-slate-950/40">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="max-w-3xl mb-16">
-                <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase mb-2">03 // Modular Architecture</h2>
-                <h3 class="text-3xl font-black text-white uppercase tracking-tight">The MedUniverse™ System Layer Subnetworks</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="p-6 bg-infra-panel/50 border border-slate-800/80 rounded-lg shadow-lg">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-8 h-8 rounded bg-infra-blue/10 border border-infra-blue/30 flex items-center justify-center text-xs font-mono font-bold text-infra-neon">01</div>
-                        <h4 class="text-base font-black text-white uppercase tracking-tight font-mono">Core OS Layer</h4>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Orchestrates core system operations, handles zero-trust identity profiles, and maintains continuous structural verification across network edges.
-                    </p>
-                </div>
-                <div class="p-6 bg-infra-panel/50 border border-slate-800/80 rounded-lg shadow-lg">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-8 h-8 rounded bg-infra-blue/10 border border-infra-blue/30 flex items-center justify-center text-xs font-mono font-bold text-infra-neon">02</div>
-                        <h4 class="text-base font-black text-white uppercase tracking-tight font-mono">OpsCommand Subsystem</h4>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Evaluates localized capacity models to supply operators with 72-hour acute tracking projections and active bed choreography thresholds.
-                    </p>
-                </div>
-                <div class="p-6 bg-infra-panel/50 border border-slate-800/80 rounded-lg shadow-lg">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-8 h-8 rounded bg-infra-blue/10 border border-infra-blue/30 flex items-center justify-center text-xs font-mono font-bold text-infra-neon">03</div>
-                        <h4 class="text-base font-black text-white uppercase tracking-tight font-mono">Clinical Flow Processor</h4>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Manages zero-latency ambient transcription processing and validation checks to coordinate point-of-care inputs directly into verified ICD-11 coding indexes.
-                    </p>
-                </div>
-                <div class="p-6 bg-infra-panel/50 border border-slate-800/80 rounded-lg shadow-lg">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-8 h-8 rounded bg-infra-blue/10 border border-infra-blue/30 flex items-center justify-center text-xs font-mono font-bold text-infra-neon">04</div>
-                        <h4 class="text-base font-black text-white uppercase tracking-tight font-mono">Nexus Analytics Hub</h4>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Enforces cryptographic differential privacy parameters, enabling authenticated external life science networks to query de-identified evidence assets natively.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="underwriting" class="py-24 border-t border-slate-900 relative z-10" x-data="{
-        beds: 1500,
-        pharmaQueries: 60,
-        discountRate: 20,
-        attrition: 0.8,
-        get acv() { return this.beds * 120; },
-        get nexusRevenue() { return this.pharmaQueries * 25000; },
-        get computedLtv() {
-            const totalAnnualInflow = this.acv + this.nexusRevenue;
-            const dFactor = this.discountRate / 100;
-            const sFactor = this.attrition / 100;
-            if ((dFactor + sFactor) === 0) return 0;
-            return Math.round(totalAnnualInflow / (dFactor + sFactor));
-        }
-    }">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <div class="lg:col-span-5 space-y-6">
-                    <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase">04 // Underwriting Matrix</h2>
-                    <h3 class="text-3xl font-black text-white uppercase tracking-tight">Multi-Sided Capital Valuation Engine</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Adjust target configuration parameters to model compounding enterprise platform values across live clinical endpoints and downstream federated data queries.
-                    </p>
                     
-                    <div class="p-4 rounded-lg bg-infra-panel border border-slate-800 font-mono text-center text-xs text-slate-300 shadow-md">
-                        <div class="text-slate-500 text-[10px] mb-2 uppercase tracking-wider">Dynamic Valuation Derivative Framework</div>
-                        <div class="text-xs font-bold text-white py-2 bg-slate-950 rounded border border-slate-900 mb-1">
-                            LTV = &Sigma; [ACV(t) + ARPU(t)] &middot; (1 - &sigma;)&circ;t / (1 + d)&circ;t
+                    <div class="lg:col-span-5 bg-infra-panel border border-slate-800 p-6 rounded-xl font-mono text-xs text-slate-400 shadow-2xl">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                            <span class="text-white font-bold text-[11px] tracking-wider uppercase">Live Stream Ingestion Audit</span>
+                            <span class="text-infra-neon text-[10px]">Kafka Node Matrix Active</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-infra-panel rounded-xl border border-slate-800/80 shadow-2xl">
-                    <div class="space-y-5 font-mono text-xs">
-                        <div>
-                            <label class="block text-slate-400 mb-2 uppercase tracking-wider" x-text="`Enterprise Bed Footprint: ${beds.toLocaleString()}`"></label>
-                            <input type="range" min="500" max="10000" step="100" x-model="beds" class="w-full accent-infra-blue bg-slate-950 h-1.5 rounded">
-                        </div>
-                        <div>
-                            <label class="block text-slate-400 mb-2 uppercase tracking-wider" x-text="`Downstream Research Queries: ${pharmaQueries}`"></label>
-                            <input type="range" min="10" max="300" step="5" x-model="pharmaQueries" class="w-full accent-infra-blue bg-slate-950 h-1.5 rounded">
-                        </div>
-                        <div>
-                            <label class="block text-slate-400 mb-2 uppercase tracking-wider" x-text="`Venture Risk Discount Rate: ${discountRate}%`"></label>
-                            <input type="range" min="12" max="35" step="1" x-model="discountRate" class="w-full accent-infra-blue bg-slate-950 h-1.5 rounded">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col justify-between p-6 rounded-lg bg-slate-950 border border-slate-900 font-mono text-center shadow-inner">
-                        <div>
-                            <span class="text-[10px] text-slate-500 uppercase tracking-widest block mb-1">SaaS Core Contract Value</span>
-                            <span class="text-lg font-bold text-white" x-text='`$${acv.toLocaleString()}`'></span>
-                        </div>
-                        <div class="my-3 border-t border-slate-900 pt-3">
-                            <span class="text-[10px] text-slate-500 uppercase tracking-widest block mb-1">Nexus Monetization Variable</span>
-                            <span class="text-lg font-bold text-infra-neon" x-text='`$${nexusRevenue.toLocaleString()}`'></span>
-                        </div>
-                        <div class="border-t border-slate-800 pt-3">
-                            <span class="text-[10px] text-infra-neon uppercase tracking-widest block mb-1 font-bold">Dynamic Enterprise LTV Target</span>
-                            <span class="text-2xl font-black text-white tracking-tight" x-text='`$${computedLtv.toLocaleString()}`'></span>
+                        <div class="space-y-2 min-h-[160px]">
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/40 border border-slate-800/40"><span class="text-slate-500">#A93F2B</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">CORE-OS</span><span class="text-emerald-400 font-bold">114.2ms</span></div>
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/40 border border-slate-800/40"><span class="text-slate-500">#E412BC</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">OPSCOMMAND</span><span class="text-emerald-400 font-bold">132.8ms</span></div>
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/40 border border-slate-800/40"><span class="text-slate-500">#C098F1</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">CLINICAL-FLOW</span><span class="text-emerald-400 font-bold">121.1ms</span></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="border-t border-slate-900 bg-slate-950 py-12 text-xs font-mono text-slate-500">
+    <main x-show="currentPage === 'solutions'" class="pt-20" x-cloak>
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl mb-16">
+                    <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase mb-2">02 // Enterprise Operations Suite</h2>
+                    <h3 class="text-3xl font-black text-white uppercase tracking-tight">Optimizing Enterprise Healthcare Performance</h3>
+                    <p class="text-slate-400 mt-4">Automating operational overhead, tracing network capacity bottlenecks, and recovering margin retention natively inside your legacy infrastructure layers.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-infra-panel border border-slate-800 rounded-xl shadow-xl">
+                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">OpsCommand Engine</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Delivers automated 72-hour structural analytics regarding acute inpatient bed allocation shortages and emergency routing parameters.</p>
+                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">Predictive Allocation Matrix →</span>
+                    </div>
+                    <div class="p-8 bg-infra-panel border border-slate-800 rounded-xl shadow-xl">
+                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">Clinical Flow Processor</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Offloads manual record documentation burdens from providers via context-validated ambient logging loops linked directly to localized database architectures.</p>
+                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">73.5% Administrative Attenuation →</span>
+                    </div>
+                    <div class="p-8 bg-infra-panel border border-slate-800 rounded-xl shadow-xl">
+                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">ICD-11 Optimization Matrix</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Bypasses typical record validation friction loops, cross-referencing diagnostic charts directly against institutional financial code indicators.</p>
+                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">Instantaneous Billing Rectification →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main x-show="currentPage === 'developers'" class="pt-20" x-cloak>
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-5 space-y-6">
+                        <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase">03 // Developer Protocol Suite</h2>
+                        <h3 class="text-3xl font-black text-white uppercase tracking-tight">Event-Driven Ingestion Pipelines</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Integrate your enterprise backend channels using optimized, asynchronous Apache Kafka event configurations running sub-200ms processing cycles across protected data registries.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-2xl font-mono text-xs">
+                        <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                            <span class="text-slate-400 text-[11px] uppercase tracking-wider">payload_transformer_node.sh</span>
+                            <span class="w-2 h-2 rounded-full bg-infra-blue animate-pulse"></span>
+                        </div>
+                        <pre class="p-6 text-slate-300 overflow-x-auto"><code>curl -X POST "https://api.mrtechnologies.internal/v5/stream/ingest" \
+  -H "Authorization: Bearer $MEDUNIVERSE_SECURE_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "payload_type": "HL7_ADT_A08",
+    "routing_node": "KAFKA_CLUSTER_48",
+    "encryption_protocol": "TLS_1.3_ENCLAVE",
+    "deterministic_graph_validation": true
+  }'</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main x-show="currentPage === 'investors'" class="pt-20" x-cloak>
+        <section class="py-24" x-data="{
+            beds: 1500,
+            pharmaQueries: 60,
+            discountRate: 20,
+            get acv() { return this.beds * 120; },
+            get nexusRevenue() { return this.pharmaQueries * 25000; },
+            get computedLtv() { return Math.round((this.acv + this.nexusRevenue) / ((this.discountRate / 100) + 0.008)); }
+        }">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase">04 // Financial Allocations Matrix</h2>
+                        <h3 class="text-3xl font-black text-white uppercase tracking-tight">Multi-Sided Capital Calculus Engine</h3>
+                        <p class="text-sm text-slate-400">Model capital compounding horizons mapped across institutional provider license matrices and secure secondary diagnostic query loops.</p>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-infra-panel p-8 rounded-xl border border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-8 shadow-2xl">
+                        <div class="space-y-4 font-mono text-xs">
+                            <div>
+                                <label class="block text-slate-400 mb-1" x-text="`Bed Footprint Allocation: ${beds.toLocaleString()}`"></label>
+                                <input type="range" min="500" max="10000" step="100" x-model="beds" class="w-full accent-infra-blue bg-slate-950">
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 mb-1" x-text="`Downstream Analytical Queries: ${pharmaQueries}`"></label>
+                                <input type="range" min="10" max="300" step="5" x-model="pharmaQueries" class="w-full accent-infra-blue bg-slate-950">
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 p-6 rounded-lg border border-slate-900 font-mono text-center flex flex-col justify-center">
+                            <span class="text-[10px] text-infra-neon uppercase font-bold tracking-wider mb-1">Dynamic Platform LTV Index</span>
+                            <span class="text-2xl font-black text-white" x-text='`$${computedLtv.toLocaleString()}`'></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main x-show="currentPage === 'contact'" class="pt-20" x-cloak>
+        <section class="py-24 max-w-xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black text-white uppercase tracking-tight mb-4">Request Integration Protocol Access</h2>
+            <p class="text-slate-400 text-sm mb-8">Initiate baseline infrastructure alignment reviews alongside our internal engineering validation team to structure staging deployment configurations.</p>
+            
+            <form class="space-y-4 font-mono text-xs" @submit.prevent="alert('Secure transmission protocol logged under system cryptographic key indices.')">
+                <input type="text" placeholder="Institutional Entity Corporate Name" required class="w-full bg-slate-950 border border-slate-800 rounded p-4 text-white placeholder-slate-600 focus:outline-none focus:border-infra-blue transition">
+                <input type="email" placeholder="Executive Protocol Email Address" required class="w-full bg-slate-950 border border-slate-800 rounded p-4 text-white placeholder-slate-600 focus:outline-none focus:border-infra-blue transition">
+                <button type="submit" class="w-full bg-white hover:bg-slate-200 text-infra-dark font-sans font-bold py-4 rounded transition uppercase tracking-wider text-xs">Authorize Platform Audit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-900 bg-slate-950 py-12 text-xs font-mono text-slate-500 relative z-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div>&copy; 2026 MR Technologies, Inc. MedUniverse™ Operating Architecture.</div>
-            <div class="text-[10px] text-slate-700 uppercase tracking-wider">BAA Compliant Edge // Certified Network Addendum Status // Alpha Protocol Deployed</div>
+            <div>&copy; 2026 MR Technologies, Inc. MedUniverse™ Infrastructure Suite.</div>
+            <div class="text-[10px] text-slate-700 tracking-wider">BAA COMPLIANT EDGE INSTANCE // CERTIFIED REAL-TIME ALPHA MATRIX ACTIVATED</div>
         </div>
     </footer>
 
