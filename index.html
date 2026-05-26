@@ -20,7 +20,7 @@
                     colors: {
                         infra: { 
                             dark: '#020617', 
-                            panel: '#0b1329', 
+                            panel: '#090f1f', 
                             edge: '#1e293b', 
                             blue: '#2563eb', 
                             neon: '#60a5fa' 
@@ -46,54 +46,55 @@
             <div class="flex items-center space-x-3 cursor-pointer" @click="currentPage = 'home'; window.scrollTo(0,0)">
                 <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-infra-blue to-indigo-600 flex items-center justify-center font-mono font-black text-white shadow-md shadow-infra-blue/20">MR</div>
                 <div class="flex flex-col">
-                    <span class="text-sm font-black tracking-wider uppercase text-white leading-none">MR Technologies</span>
+                    <span class="text-sm font-black tracking-wider uppercase text-white leading-none">MR TECHNOLOGIES</span>
                     <span class="text-[9px] font-mono text-infra-neon tracking-widest uppercase mt-1">Sovereign Computational Layer</span>
                 </div>
             </div>
             
-            <nav class="hidden lg:flex items-center space-x-8 text-[11px] font-mono tracking-wider uppercase">
-                <button @click="currentPage = 'home'; window.scrollTo(0,0)" :class="currentPage === 'home' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">01 // Core Platform</button>
-                <button @click="currentPage = 'solutions'; window.scrollTo(0,0)" :class="currentPage === 'solutions' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">02 // Provider Solutions</button>
-                <button @click="currentPage = 'developers'; window.scrollTo(0,0)" :class="currentPage === 'developers' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">03 // Dev Portal</button>
-                <button @click="currentPage = 'investors'; window.scrollTo(0,0)" :class="currentPage === 'investors' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">04 // Investor Relations</button>
+            <nav class="hidden lg:flex items-center space-x-6 text-[11px] font-mono tracking-wider uppercase">
+                <button @click="currentPage = 'home'; window.scrollTo(0,0)" :class="currentPage === 'home' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">Home</button>
+                <button @click="currentPage = 'about'; window.scrollTo(0,0)" :class="currentPage === 'about' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">About Us</button>
+                <button @click="currentPage = 'solutions'; window.scrollTo(0,0)" :class="currentPage === 'solutions' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">Solutions</button>
+                <button @click="currentPage = 'developers'; window.scrollTo(0,0)" :class="currentPage === 'developers' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">Dev Portal</button>
+                <button @click="currentPage = 'investors'; window.scrollTo(0,0)" :class="currentPage === 'investors' ? 'text-infra-neon font-bold' : 'text-slate-400 hover:text-white transition'">Investors</button>
             </nav>
             
             <button @click="currentPage = 'contact'; window.scrollTo(0,0)" :class="currentPage === 'contact' ? 'bg-infra-blue text-white' : 'bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-white'" class="font-mono text-xs tracking-wider px-4 py-2.5 rounded transition">
-                Request Protocol Access
+                Procurement Gateway
             </button>
         </div>
     </header>
 
-    <main x-show="currentPage === 'home'" class="pt-20">
+    <main x-show="currentPage === 'home'" class="pt-20 animate-fadeIn">
         <section class="relative pt-24 pb-32 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-7 space-y-6">
                         <div class="inline-flex items-center space-x-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-md font-mono text-[11px] text-infra-neon">
                             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span>MEDUNIVERSE SYSTEM LAYER DEPLOYED</span>
+                            <span>MEDUNIVERSE CORE LAYER ACTIVE</span>
                         </div>
                         <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight uppercase leading-[1.05]">
                             The AI-Native Operating System Layer for <span class="text-transparent bg-clip-text bg-gradient-to-r from-infra-blue to-indigo-400">Global Healthcare</span> Infrastructure
                         </h1>
-                        <p class="text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed">
-                            MedUniverse™ bypasses un-optimized database setups. By integrating stateful orchestration pipelines directly on top of legacy medical applications inside certified enclaves, we accelerate active systemic operational performance.
+                        <p class="text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed font-sans">
+                            MedUniverse™ completely bypasses un-optimized health application constraints. By deploying structural, hardware-isolated multi-agent pipelines directly on top of legacy institutional registries, we establish active, deterministic medical infrastructure workflows.
                         </p>
                         <div class="flex flex-wrap gap-4 pt-2">
-                            <button @click="currentPage = 'solutions'" class="bg-gradient-to-r from-infra-blue to-indigo-600 font-mono text-xs font-bold tracking-wider uppercase px-6 py-4 rounded shadow-lg shadow-infra-blue/20 transition">Explore Provider Architecture</button>
-                            <button @click="currentPage = 'developers'" class="bg-slate-900/80 border border-slate-800 text-slate-300 font-mono text-xs tracking-wider uppercase px-6 py-4 rounded transition">Inspect API Specs</button>
+                            <button @click="currentPage = 'solutions'" class="bg-gradient-to-r from-infra-blue to-indigo-600 font-mono text-xs font-bold tracking-wider uppercase px-6 py-4 rounded shadow-lg shadow-infra-blue/20 transition">Launch Solutions Suite</button>
+                            <button @click="currentPage = 'about'" class="bg-slate-900/80 border border-slate-800 text-slate-300 font-mono text-xs tracking-wider uppercase px-6 py-4 rounded transition">Read System Vision</button>
                         </div>
                     </div>
                     
                     <div class="lg:col-span-5 bg-infra-panel border border-slate-800 p-6 rounded-xl font-mono text-xs text-slate-400 shadow-2xl">
                         <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-                            <span class="text-white font-bold text-[11px] tracking-wider uppercase">Live Stream Ingestion Audit</span>
-                            <span class="text-infra-neon text-[10px]">Kafka Node Matrix Active</span>
+                            <span class="text-white font-bold text-[11px] tracking-wider uppercase">Ingestion Stream Telemetry</span>
+                            <span class="text-infra-neon text-[10px]">Secure Node Active</span>
                         </div>
                         <div class="space-y-2 min-h-[160px]">
-                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/40 border border-slate-800/40"><span class="text-slate-500">#A93F2B</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">CORE-OS</span><span class="text-emerald-400 font-bold">114.2ms</span></div>
-                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/40 border border-slate-800/40"><span class="text-slate-500">#E412BC</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">OPSCOMMAND</span><span class="text-emerald-400 font-bold">132.8ms</span></div>
-                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/40 border border-slate-800/40"><span class="text-slate-500">#C098F1</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">CLINICAL-FLOW</span><span class="text-emerald-400 font-bold">121.1ms</span></div>
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-900"><span class="text-slate-500">#M92A88</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">CORE-OS</span><span class="text-emerald-400 font-bold">112.4ms</span></div>
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-900"><span class="text-slate-500">#K11P02</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">OPSCOMMAND</span><span class="text-emerald-400 font-bold">129.1ms</span></div>
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-900"><span class="text-slate-500">#X74L91</span><span class="text-slate-300 bg-slate-800 px-1.5 rounded text-[10px]">CLINICAL-FLOW</span><span class="text-emerald-400 font-bold">118.5ms</span></div>
                         </div>
                     </div>
                 </div>
@@ -101,51 +102,75 @@
         </section>
     </main>
 
-    <main x-show="currentPage === 'solutions'" class="pt-20" x-cloak>
+    <main x-show="currentPage === 'about'" class="pt-20 animate-fadeIn" x-cloak>
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div class="space-y-6">
+                        <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase">01 // System Vision</h2>
+                        <h3 class="text-3xl font-black text-white uppercase tracking-tight">Re-Engineering Modern Medical Runtime Protocols</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed font-sans">
+                            MR Technologies was founded by a multi-disciplinary cohort of enterprise systems engineers and institutional Chief Medical Information Officers (CMIOs) who grew tired of watching healthcare collapse under un-optimized administrative software layers.
+                        </p>
+                        <p class="text-slate-400 text-sm leading-relaxed font-sans">
+                            We don't build standard software interfaces or superficial dashboard wrappers. Our mandate is clear: deploy a secure, resilient, and highly deterministic zero-trust network data layer directly underneath enterprise medical infrastructure to unlock clinical velocity.
+                        </p>
+                    </div>
+                    <div class="bg-infra-panel border border-slate-800 p-8 rounded-xl shadow-xl font-mono text-xs space-y-4">
+                        <div class="text-white font-bold uppercase border-b border-slate-800 pb-2">Institutional Milestones</div>
+                        <div class="flex justify-between"><span>Active Academic Pilots:</span><span class="text-infra-neon font-bold">4 Completed</span></div>
+                        <div class="flex justify-between"><span>Net Revenue Retention:</span><span class="text-emerald-400 font-bold">134% YoY</span></div>
+                        <div class="flex justify-between"><span>Compliance Framework:</span><span class="text-white font-bold">HIPAA / EU AI Act</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main x-show="currentPage === 'solutions'" class="pt-20 animate-fadeIn" x-cloak>
         <section class="py-24">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="max-w-3xl mb-16">
-                    <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase mb-2">02 // Enterprise Operations Suite</h2>
-                    <h3 class="text-3xl font-black text-white uppercase tracking-tight">Optimizing Enterprise Healthcare Performance</h3>
-                    <p class="text-slate-400 mt-4">Automating operational overhead, tracing network capacity bottlenecks, and recovering margin retention natively inside your legacy infrastructure layers.</p>
+                    <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase mb-2">02 // Operational Modules</h2>
+                    <h3 class="text-3xl font-black text-white uppercase tracking-tight">Targeted Enterprise Solutions Matrix</h3>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="p-8 bg-infra-panel border border-slate-800 rounded-xl shadow-xl">
-                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">OpsCommand Engine</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Delivers automated 72-hour structural analytics regarding acute inpatient bed allocation shortages and emergency routing parameters.</p>
-                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">Predictive Allocation Matrix →</span>
+                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">OpsCommand</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Calculates predictive models for ICU bed asset shortages and emergency unit transfers up to 72 hours in advance.</p>
+                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">Deploy Module Matrix →</span>
                     </div>
                     <div class="p-8 bg-infra-panel border border-slate-800 rounded-xl shadow-xl">
-                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">Clinical Flow Processor</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Offloads manual record documentation burdens from providers via context-validated ambient logging loops linked directly to localized database architectures.</p>
-                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">73.5% Administrative Attenuation →</span>
+                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">Clinical Flow</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Elimines manual physician data-entry bottlenecks using secure point-of-care scribe systems locked into isolated server containers.</p>
+                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">Optimize Administrative Lag →</span>
                     </div>
                     <div class="p-8 bg-infra-panel border border-slate-800 rounded-xl shadow-xl">
-                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">ICD-11 Optimization Matrix</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Bypasses typical record validation friction loops, cross-referencing diagnostic charts directly against institutional financial code indicators.</p>
-                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">Instantaneous Billing Rectification →</span>
+                        <h4 class="text-lg font-black text-white uppercase font-mono mb-2">Nexus Privacy Hub</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Allows verified external medical researchers to query analytical registries natively without compromising raw patient data.</p>
+                        <span class="text-[11px] font-mono text-infra-neon uppercase tracking-wider">Access Monetization Node →</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <main x-show="currentPage === 'developers'" class="pt-20" x-cloak>
+    <main x-show="currentPage === 'developers'" class="pt-20 animate-fadeIn" x-cloak>
         <section class="py-24">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                     <div class="lg:col-span-5 space-y-6">
-                        <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase">03 // Developer Protocol Suite</h2>
-                        <h3 class="text-3xl font-black text-white uppercase tracking-tight">Event-Driven Ingestion Pipelines</h3>
+                        <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase">03 // Engineer Environment</h2>
+                        <h3 class="text-3xl font-black text-white uppercase tracking-tight">Real-Time Data Ingestion Topology</h3>
                         <p class="text-sm text-slate-400 leading-relaxed">
-                            Integrate your enterprise backend channels using optimized, asynchronous Apache Kafka event configurations running sub-200ms processing cycles across protected data registries.
+                            Connect your institution’s system directly into our stream networks using highly responsive Kafka brokers and zero-trust verification architectures.
                         </p>
                     </div>
 
                     <div class="lg:col-span-7 bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-2xl font-mono text-xs">
                         <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                            <span class="text-slate-400 text-[11px] uppercase tracking-wider">payload_transformer_node.sh</span>
+                            <span class="text-slate-400 text-[11px] uppercase tracking-wider">payload_routing_layer.sh</span>
                             <span class="w-2 h-2 rounded-full bg-infra-blue animate-pulse"></span>
                         </div>
                         <pre class="p-6 text-slate-300 overflow-x-auto"><code>curl -X POST "https://api.mrtechnologies.internal/v5/stream/ingest" \
@@ -163,7 +188,7 @@
         </section>
     </main>
 
-    <main x-show="currentPage === 'investors'" class="pt-20" x-cloak>
+    <main x-show="currentPage === 'investors'" class="pt-20 animate-fadeIn" x-cloak>
         <section class="py-24" x-data="{
             beds: 1500,
             pharmaQueries: 60,
@@ -175,15 +200,15 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-5 space-y-4">
-                        <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase">04 // Financial Allocations Matrix</h2>
-                        <h3 class="text-3xl font-black text-white uppercase tracking-tight">Multi-Sided Capital Calculus Engine</h3>
-                        <p class="text-sm text-slate-400">Model capital compounding horizons mapped across institutional provider license matrices and secure secondary diagnostic query loops.</p>
+                        <h2 class="text-xs font-mono font-bold tracking-widest text-infra-neon uppercase">04 // Capital Operations</h2>
+                        <h3 class="text-3xl font-black text-white uppercase tracking-tight">Venture Return Modeling Platform</h3>
+                        <p class="text-sm text-slate-400">Scale the interactive parameter nodes below to test unit metrics across system deployments and secondary pharma query pipelines.</p>
                     </div>
 
                     <div class="lg:col-span-7 bg-infra-panel p-8 rounded-xl border border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-8 shadow-2xl">
                         <div class="space-y-4 font-mono text-xs">
                             <div>
-                                <label class="block text-slate-400 mb-1" x-text="`Bed Footprint Allocation: ${beds.toLocaleString()}`"></label>
+                                <label class="block text-slate-400 mb-1" x-text="`Enterprise Bed Scale: ${beds.toLocaleString()}`"></label>
                                 <input type="range" min="500" max="10000" step="100" x-model="beds" class="w-full accent-infra-blue bg-slate-950">
                             </div>
                             <div>
@@ -202,15 +227,15 @@
         </section>
     </main>
 
-    <main x-show="currentPage === 'contact'" class="pt-20" x-cloak>
+    <main x-show="currentPage === 'contact'" class="pt-20 animate-fadeIn" x-cloak>
         <section class="py-24 max-w-xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-black text-white uppercase tracking-tight mb-4">Request Integration Protocol Access</h2>
-            <p class="text-slate-400 text-sm mb-8">Initiate baseline infrastructure alignment reviews alongside our internal engineering validation team to structure staging deployment configurations.</p>
+            <h2 class="text-3xl font-black text-white uppercase tracking-tight mb-4">Initiate Procurement Sequence</h2>
+            <p class="text-slate-400 text-sm mb-8">Request data integration parameter checks or lock in active Series A PPM distribution packages alongside our security desk.</p>
             
-            <form class="space-y-4 font-mono text-xs" @submit.prevent="alert('Secure transmission protocol logged under system cryptographic key indices.')">
-                <input type="text" placeholder="Institutional Entity Corporate Name" required class="w-full bg-slate-950 border border-slate-800 rounded p-4 text-white placeholder-slate-600 focus:outline-none focus:border-infra-blue transition">
-                <input type="email" placeholder="Executive Protocol Email Address" required class="w-full bg-slate-950 border border-slate-800 rounded p-4 text-white placeholder-slate-600 focus:outline-none focus:border-infra-blue transition">
-                <button type="submit" class="w-full bg-white hover:bg-slate-200 text-infra-dark font-sans font-bold py-4 rounded transition uppercase tracking-wider text-xs">Authorize Platform Audit Request</button>
+            <form class="space-y-4 font-mono text-xs" @submit.prevent="alert('Secure pipeline connection request authorized and logged under system signature indices.')">
+                <input type="text" placeholder="Institutional Network Entity Legal Name" required class="w-full bg-slate-950 border border-slate-800 rounded p-4 text-white placeholder-slate-600 focus:outline-none focus:border-infra-blue transition">
+                <input type="email" placeholder="Executive Architecture Contact Email" required class="w-full bg-slate-950 border border-slate-800 rounded p-4 text-white placeholder-slate-600 focus:outline-none focus:border-infra-blue transition">
+                <button type="submit" class="w-full bg-white hover:bg-slate-200 text-infra-dark font-sans font-bold py-4 rounded transition uppercase tracking-wider text-xs">Transmit Secure Authorization Request</button>
             </form>
         </section>
     </main>
@@ -218,7 +243,7 @@
     <footer class="border-t border-slate-900 bg-slate-950 py-12 text-xs font-mono text-slate-500 relative z-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div>&copy; 2026 MR Technologies, Inc. MedUniverse™ Infrastructure Suite.</div>
-            <div class="text-[10px] text-slate-700 tracking-wider">BAA COMPLIANT EDGE INSTANCE // CERTIFIED REAL-TIME ALPHA MATRIX ACTIVATED</div>
+            <div class="text-[10px] text-slate-700 tracking-wider">SECURE PIPELINE INSTANCE // VERIFIED BAA LAYER ALPHA-RUNTIME ACTIVATED</div>
         </div>
     </footer>
 
